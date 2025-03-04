@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post["body"] = params["body"]
     @post["image"] = params["image"]
+    @post["user_id"] = @user["id"]
     # TODO: assign logged-in user as user that created the post
     @post.save
     redirect_to "/posts"
